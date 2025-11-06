@@ -47,8 +47,8 @@ export class UsersDetailsComponent implements OnInit {
     this.status$ = this.#store.select(selectUsersStatus);
     this.error$ = this.#store.select(selectUsersError);
 
-    this.error$.subscribe(() => {
-      this.#fallback('Users :: User not found [404]');
+    this.error$.subscribe((value) => {
+      if (value) this.#fallback('Users :: User not found [404]');
     });
   }
 
