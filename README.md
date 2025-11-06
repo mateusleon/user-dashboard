@@ -1,4 +1,22 @@
-# UserDashboard
+# LastLink - User Dashboard
+
+Este repositório foi desenvolvido para aplicação de teste técnico.
+
+## Rotinas
+
+- `npm i` - Instala dependências.
+
+- `npx npm run start` - Processa o aplicativo.
+- `npx npm run build` - Monta o aplicativo.
+- `npx npm run test` - Processa os testes existentes.
+
+## Abordagens
+
+No arquivo OVERVIEW.md, dentro de /wiki, está um overview sobre o planejamento do desenvolvimento, bem como algumas migrações sugeridas, pesquisa de relevância das tecnologias usadas no momento, e BONUS Stories, como propostas de enriquecimento / extensão da plataforma.
+
+===============================================================
+
+## DEFAULT NX MONOREPO README.md
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
