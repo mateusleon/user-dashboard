@@ -1,0 +1,16 @@
+export const KEYS = {
+  ADDRESS: 'Address',
+  COMPANY: 'Company',
+  EMAIL: 'E-mail',
+  LATITUDE: 'Latitude',
+  LOADING: 'Loading',
+  LONGITUDE: 'Longitude',
+  NAME: 'Name',
+  PHONE: 'Phone',
+  SEARCH_PLACEHOLDER: 'Search...',
+  USERNAME: 'Username',
+  USER_404: 'User not found',
+  USER_DETAILS: 'User details',
+  USER_LIST: 'User list',
+  WEBSITE: 'Website',
+} as const;

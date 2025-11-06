@@ -17,7 +17,8 @@
     "paths": {
       "@lastlink/core": ["libs/lastlink/core/src/index.ts"],
       "@lastlink/features": ["libs/lastlink/features/src/index.ts"],
-      "@lastlink/shared": ["libs/lastlink/shared/src/index.ts"]
+      "@lastlink/shared": ["libs/lastlink/shared/src/index.ts"],
+      "@lastlink/store": ["libs/lastlink/store/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

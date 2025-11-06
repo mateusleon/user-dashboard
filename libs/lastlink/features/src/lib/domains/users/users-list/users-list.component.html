@@ -1,0 +1,14 @@
+<section class="cards-list">
+  <div class="cards-list__wrapper">
+    <h1>{{ K.USER_LIST }}</h1>
+    <ll-search
+      [items$]="items$"
+      [filterKey]="searchFilterKey"
+      [placeHolder]="K.SEARCH_PLACEHOLDER"
+      [debounceTime]="searchDebounceTime"
+      (filteredItems$)="onFilteredItems($event)"
+    >
+    </ll-search>
+    <ll-users-cards [items$]="filteredItems$"></ll-users-cards>
+  </div>
+</section>

@@ -1,1 +1,2 @@
-export * from './lib/lastlink-features.module';
+// LIB
+export * from './lib';

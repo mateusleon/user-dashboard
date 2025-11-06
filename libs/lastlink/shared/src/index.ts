@@ -1,1 +1,2 @@
-export * from './lib/lastlink-shared.module';
+// LIB
+export * from './lib';

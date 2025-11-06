@@ -10,7 +10,14 @@
       "executor": "@nrwl/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/lastlink/core/ng-package.json"
+        "project": "libs/lastlink/core/ng-package.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "{workspaceRoot}/dist/{projectRoot}/libs/lastlink/core/assets",
+            "output": "assets/lastlink/core"
+          }
+        ]
       },
       "configurations": {
         "production": {

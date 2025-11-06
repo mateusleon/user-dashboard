@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img"
+  aria-labelledby="title desc">
+  <title id="title">Image placeholder</title>
+  <desc id="desc">Generic image placeholder with mountains and sun</desc>
+  <rect x="0.5" y="0.5" width="119" height="119" rx="8" fill="#F3F4F6" stroke="#E5E7EB"
+    stroke-width="1" />
+  <!-- sun -->
+  <circle cx="86" cy="30" r="10" fill="#D1D5DB" />
+  <!-- mountains -->
+  <polygon points="16,92 48,44 80,92" fill="#9CA3AF" />
+  <polygon points="40,92 72,62 104,92" fill="#6B7280" />
+  <!-- subtle foreground detail -->
+  <rect x="14" y="84" width="92" height="6" rx="3" fill="#E5E7EB" />
+</svg>

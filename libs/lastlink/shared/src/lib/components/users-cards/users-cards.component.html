@@ -1,0 +1,13 @@
+<section class="cards">
+  <div class="cards__content" *ngIf="items$ | async as items">
+    <div class="cards__item" *ngFor="let item of items">
+      <ll-users-cards-item
+        [item$]="item | of"
+        [details]="false"
+      ></ll-users-cards-item>
+    </div>
+  </div>
+  <div class="cards__content" *ngIf="isLoading(items$ | async)">
+    {{ K.LOADING }}
+  </div>
+</section>

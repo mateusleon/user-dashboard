@@ -13,5 +13,11 @@
     "jest.config.ts",
     "src/**/*.test.ts"
   ],
-  "include": ["src/**/*.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/lib/const/INTERSTITIAL.ts",
+    "src/lib/const/NAMESPACES.ts",
+    "src/lib/const/SEPARATOR.ts",
+    "../store/src/lib/interfaces/IResourceState.ts"
+  ]
 }

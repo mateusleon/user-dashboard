@@ -1,0 +1,149 @@
+<div class="card" [ngClass]="{ '--is-single': isSingle }">
+  <div class="card__content" *ngIf="item$ | async as item">
+    <figure class="card-avatar">
+      <!-- <img
+      class="card-avatar__img"
+      [src]="'https://avatar.iran.liara.run/username?username=' + item.username"
+      [alt]="item.name"
+    /> -->
+      <ll-svg class="card-avatar__img" [name]="svgAvatarPlaceholder"></ll-svg>
+      <figcaption class="card-avatar__label">
+        <p class="card-avatar__text">{{ item.name }}</p>
+      </figcaption>
+    </figure>
+    <aside class="card__details">
+      <header class="card-header card__segment">
+        <h1 class="card-header__line">
+          <strong class="card-header__name">{{ item.name }}</strong
+          ><br />
+          <small class="card-header__username"
+            ><strong class="card-header__label">{{ K.USERNAME }}</strong
+            >: <em class="card-header__text">{{ item.username }}</em></small
+          >
+        </h1>
+      </header>
+      <div class="card-body card__segment" *ngIf="details">
+        <div class="card__segment">
+          <ul class="card-avatar__text">
+            <li>
+              <em>{{ K.NAME }}</em
+              >: {{ item.name }}
+            </li>
+            <li>
+              <em>{{ K.USERNAME }}</em
+              >: {{ item.username }}
+            </li>
+            <li>
+              <em>{{ K.EMAIL }}</em
+              >: {{ item.email }}
+            </li>
+            <li>
+              <em>{{ K.PHONE }}</em
+              >: {{ item.phone }}
+            </li>
+            <li>
+              <em>{{ K.WEBSITE }}</em
+              >: {{ item.website }}
+            </li>
+          </ul>
+        </div>
+        <address class="card__segment" *ngIf="item.address as address">
+          <figure class="card-avatar">
+            <!-- <img
+            class="card-avatar__img"
+            [src]="'https://avatar.iran.liara.run/username?username=' + K.ADDRESS"
+            [alt]="K.ADDRESS"
+          /> -->
+            <ll-svg
+              class="card-avatar__img"
+              [name]="svgAvatarPlaceholder"
+            ></ll-svg>
+            <figcaption class="card-avatar__label">
+              <p class="card-avatar__text">{{ K.ADDRESS }}</p>
+            </figcaption>
+          </figure>
+          <div class="card-address card__details">
+            <h3 class="card-address__headline">
+              <small class="card-address__title">{{ K.COMPANY }}</small>
+            </h3>
+            <p class="card-address__line" *ngIf="address.street">
+              {{ address.street }}
+            </p>
+            <p class="card-address__line" *ngIf="address.suite">
+              {{ address.suite }}
+            </p>
+            <p class="card-address__line" *ngIf="address.city">
+              {{ address.city }}
+            </p>
+            <p class="card-address__line" *ngIf="address.zipcode">
+              {{ address.zipcode }}
+            </p>
+            <dl class="card-geo" *ngIf="address.geo as geo">
+              <dt class="card-geo__lat">{{ K.LATITUDE }}</dt>
+              <dd class="card-geo__lng">{{ geo.lat }}</dd>
+              <dt class="card-geo__lat">{{ K.LONGITUDE }}</dt>
+              <dd class="card-geo__lng">{{ geo.lng }}</dd>
+            </dl>
+          </div>
+        </address>
+        <div class="card__segment" *ngIf="item.company as company">
+          <figure class="card-avatar">
+            <!-- <img
+            class="card-avatar__img"
+            [src]="'https://avatar.iran.liara.run/username?username=' + company.name"
+            [alt]="company.name"
+          /> -->
+            <ll-svg
+              class="card-avatar__img"
+              [name]="svgAvatarPlaceholder"
+            ></ll-svg>
+            <figcaption class="card-avatar__label">
+              <p class="card-avatar__text">{{ company.name }}</p>
+            </figcaption>
+          </figure>
+          <div class="card-company card__details">
+            <h3 class="card-company__headline">
+              <small class="card-company__title">{{ K.COMPANY }}</small
+              ><br /><strong class="card-company__name">{{
+                company.name
+              }}</strong>
+            </h3>
+            <p class="card-company-catch">
+              <em class="card-company-catch__text">{{
+                company.catchPhrase
+              }}</em>
+            </p>
+            <div class="card-company-bs">
+              <ul class="card-company-bs__list" *ngIf="company.bs as bs">
+                <li
+                  class="card-company-bs__item"
+                  *ngFor="let part of bs | split"
+                >
+                  <span class="card-company-bs__text">{{ part }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="card-footer card__segment">
+        <nav class="card-nav">
+          <ol class="card-nav__list">
+            <li class="card-nav__item">
+              <a
+                class="card-nav__link"
+                [routerLink]="['/', DOMAINS.users, 'details', item.id]"
+                [title]="K.USER_DETAILS"
+                ><i class="card-nav__icon"></i
+                ><span class="card-nav__text">{{ K.USER_DETAILS }}</span></a
+              >
+            </li>
+          </ol>
+        </nav>
+      </footer>
+    </aside>
+  </div>
+  <div class="card__content" *ngIf="isLoading(item$ | async)">
+    {{ K.LOADING }}
+  </div>
+</div>
